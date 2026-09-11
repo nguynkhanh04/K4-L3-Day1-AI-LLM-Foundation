@@ -22,6 +22,9 @@ from pathlib import Path
 
 import pytest
 
+if sys.platform == "win32" and hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+
 DAY_DIR = Path(__file__).parent
 
 # (tên tiêu chí, args pytest, điểm tối đa)
